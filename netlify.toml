@@ -11,10 +11,3 @@
   to = "https://:splat"
   status = 301
   force = true
-
-# 2) Netlify subdomain → your primary domain (change to your real domain)
-[[redirects]]
-  from = "https://groveblinds.netlify.app/*"
-  to = "groveblinds.netlify.app/:splat"
-  status = 301
-  force = true
