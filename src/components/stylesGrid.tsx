@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { shutterStyles, blindTypes } from "@/lib/styles"
-
+import { Route } from "next"
 type Tab = "shutters" | "blinds"
 
 function Tile({
@@ -11,7 +11,7 @@ function Tile({
 }: { href: string; title: string; blurb: string; src: string; badge: "Shutters" | "Blinds" }) {
   return (
     <Link
-      href={href}
+      href={href as Route}
       className="group block overflow-hidden rounded-2xl border border-gray-100 hover:shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
     >
       <div className="relative aspect-[4/3]">
