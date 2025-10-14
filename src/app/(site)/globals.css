@@ -1,0 +1,33 @@
+/* Tailwind v4 core */
+@import "tailwindcss";
+
+/* (Optional) v4 plugin directives */
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+/* Design tokens (v4): define brand once, use as bg-brand / text-brand / ring-brand */
+@theme {
+  --color-brand: #83ccb0;        /* Grove mint */
+  --radius: 1.25rem;  
+    --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+           /* used by rounded-[--radius] if you want */
+}
+
+/* Smooth scroll */
+h1, h2, h3, .heading { font-family: var(--font-serif); }
+body { font-family: var(--font-sans); }
+
+html { scroll-behavior: smooth; }
+
+/* Accessible focus styles */
+*,:focus-visible { outline: none; }
+.focusable:focus-visible {
+  /* If you prefer, use ring utilities on elements instead of this */
+  box-shadow: 0 0 0 3px var(--color-brand);
+}
+
+/* If you want a CSS background helper for your local image */
+.bg-hero-install {
+  background-image: url('/images/recentinstall.webp'); /* served from /public/images */
+}
