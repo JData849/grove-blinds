@@ -7,6 +7,13 @@
 
 # 1) HTTP → HTTPS
 [[redirects]]
+  from = "http://groveblinds.netlify.app/*"
+  to = "https://groveblinds.netlify.app/:splat"
+  status = 301
+  force = true
+
+# (Optional) catch-all just in case
+[[redirects]]
   from = "http://*"
   to = "https://:splat"
   status = 301
