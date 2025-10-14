@@ -5,7 +5,7 @@ import { Header, Footer } from "@/components/Header"
 import { shutterStyles } from "@/lib/styles"
 import { ShutterEstimator } from "@/components/ShutterEstimator"
 import { CoverageSection } from "@/components/CoverageSection"
-import { Metadata } from "next"
+import { Metadata, Route } from "next"
 import { FinalQuote } from "@/components/FinalQuote"
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ function Tile({
 }) {
   return (
     <Link
-      href={href}
+      href={href as Route}
       className="group block overflow-hidden rounded-2xl border border-gray-100 hover:shadow-soft"
     >
       <div className="relative aspect-[4/3]">
