@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "public"   # 👈 any non-root folder is fine; 'public' is safe
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
