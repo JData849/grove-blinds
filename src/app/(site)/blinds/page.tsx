@@ -4,7 +4,7 @@ import { Header, Footer } from "@/components/Header"
 import { blindTypes } from "@/lib/styles"
 import { CoverageSection } from "@/components/CoverageSection"
 import { FinalQuote } from "@/components/FinalQuote"
-import { Metadata } from "next"
+import { Metadata, Route } from "next"
 export const metadata: Metadata = {
   title: "Blinds",
   description: "Day & Night, Roman and Venetian blinds — precision measured and professionally installed.",
@@ -25,7 +25,7 @@ function Tile({
 }) {
   return (
     <Link
-      href={href}
+      href={href as Route}
       className="group block overflow-hidden rounded-2xl border border-gray-100 hover:shadow-soft"
     >
       <div className="relative aspect-[4/3]">
