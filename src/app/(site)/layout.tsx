@@ -14,7 +14,7 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://groveblinds.netlify.app"),
   title: { default: "Grove Blinds & Shutters", template: "%s · Grove Blinds & Shutters" },
   description: "Luxury, made-to-measure shutters and blinds across Greater Manchester and surrounding areas.",
 }
