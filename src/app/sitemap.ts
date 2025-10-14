@@ -3,7 +3,7 @@ import { cities } from "@/lib/locations"
 import { shutterStyles, blindTypes } from "@/lib/styles"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://groveblinds.netlify.app/"
   const now = new Date()
 
   return [
