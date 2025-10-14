@@ -28,8 +28,8 @@ export function Header() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
           <Link href="/about" className="hover:text-gray-700">About</Link>
-          <Link href="/shutters/" className="hover:text-gray-700">Shutters</Link>
-          <Link href="/blinds/" className="hover:text-gray-700">Blinds</Link>
+          <Link href="/shutters" className="hover:text-gray-700">Shutters</Link>
+          <Link href="/blinds" className="hover:text-gray-700">Blinds</Link>
           <a href="#quote" className="inline-flex items-center rounded-full bg-brand px-4 py-2 font-semibold text-gray-900 shadow-sm hover:opacity-90">
             Free Quote
           </a>
@@ -53,8 +53,8 @@ export function Header() {
       <div className={clsx("md:hidden border-t border-gray-100 bg-white", open ? "block" : "hidden")}>
         <nav className="px-4 py-4 space-y-2 text-sm">
           <Link href="/about" className="block rounded-xl px-3 py-2 hover:bg-gray-50">About</Link>
-          <Link href="/shutters/" className="block rounded-xl px-3 py-2 hover:bg-gray-50">Shutters</Link>
-          <Link href="/blinds/" className="block rounded-xl px-3 py-2 hover:bg-gray-50">Blinds</Link>
+          <Link href="/shutters" className="block rounded-xl px-3 py-2 hover:bg-gray-50">Shutters</Link>
+          <Link href="/blinds" className="block rounded-xl px-3 py-2 hover:bg-gray-50">Blinds</Link>
           <a
             href="#quote"
             className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-brand px-4 py-2 font-semibold text-gray-900 shadow-sm hover:opacity-90"
