@@ -11,6 +11,7 @@ export type BlindTypeSlug =
   | "vertical"
   | "perfect-fit"
   | "roman"
+  | "roller"
   | "roller-day-and-night"
 
 export interface StyleItem {
@@ -207,6 +208,28 @@ export const blindTypes: StyleItem[] = [
     gallery: [
       "/images/styles/roman/1.webp",
       "/images/styles/roman/2.webp"
+    ]
+  },
+  {
+    slug: "roller",
+    name: "Roller Blinds",
+    blurb: "Clean, simple design with vast fabric and colour choice.",
+    description:
+      "Roller blinds provide a minimalist finish with smooth operation and hundreds of fabric options for every room.",
+    benefits: [
+      "Simple, space-saving design for any window.",
+      "Hundreds of fabrics from blackout to sheer.",
+      "Optional cassettes and bottom bar finishes.",
+      "Chain, spring, or motorised control options.",
+      "Ideal for kitchens, bathrooms, and offices.",
+      "UV and moisture-resistant fabric options.",
+      "Precise light and glare management.",
+      "Easy to clean and maintain."
+    ],
+    cover: "/images/styles/roller/cover.webp",
+    gallery: [
+      "/images/styles/roller/1.webp",
+      "/images/styles/roller/2.webp"
     ]
   },
   {
