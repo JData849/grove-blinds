@@ -27,9 +27,9 @@ export default async function CityPage({
           Expert advice, precise measuring, and professional fitting.
         </p>
         <ul className="mt-8 grid sm:grid-cols-2 gap-3 text-gray-700">
-          <li>✓ Full-height • Tier-on-tier • Café-style • Solid-panel • Waterproof</li>
-          <li>✓ Roller Day & Night • Roman • Venetian</li>
-          <li>✓ 5-year guarantee and aftercare</li>
+          <li>✓ Full-height • Tier-on-tier • Café-style • Waterproof</li>
+          <li>✓ Venetian • Roman • Vertical • Perfect Fit • Day & Night Rollers</li>
+          <li>✓ Manufacturers warranty and local aftercare</li>
           <li>✓ Local team, trusted by homeowners</li>
         </ul>
       </main>

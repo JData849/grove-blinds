@@ -4,22 +4,23 @@ export type ShutterStyleSlug =
   | "full-height"
   | "tier-on-tier"
   | "cafe-style"
-  | "solid-panel"
   | "waterproof"
 
 export type BlindTypeSlug =
-  | "roller-day-and-night"
-  | "roman"
   | "venetian"
+  | "vertical"
+  | "perfect-fit"
+  | "roman"
+  | "roller-day-and-night"
 
 export interface StyleItem {
   slug: string
   name: string
-  blurb: string           // short card text for homepage tiles
-  description: string     // kept for SEO; UI shows benefits list
-  benefits: string[]      // 8 concise bullets rendered on style pages
-  cover: string           // public path to a 4:3 or 1:1 cover image
-  gallery: string[]       // public paths for gallery grid
+  blurb: string
+  description: string
+  benefits: string[]
+  cover: string
+  gallery: string[]
 }
 
 /* ------------------- SHUTTERS ------------------- */
@@ -94,29 +95,6 @@ export const shutterStyles: StyleItem[] = [
     ]
   },
   {
-    slug: "solid-panel",
-    name: "Solid Panel Shutters",
-    blurb: "Classic, draught-reducing solid timber panels.",
-    description:
-      "Solid panels deliver a heritage look with excellent darkening and draught reduction for restful rooms.",
-    benefits: [
-      "Near-blackout darkness when closed.",
-      "Noticeable draught and noise reduction.",
-      "Authentic heritage aesthetic for period homes.",
-      "Panels fold back neatly to reveal full glazing.",
-      "Paint or stain to match cabinetry and trim.",
-      "Robust joinery for long-term stability.",
-      "Ideal for bedrooms, nurseries, and snug lounges.",
-      "Luxurious, substantial feel versus louvred styles."
-    ],
-    cover: "/images/styles/solid-panel/cover.webp",
-    gallery: [
-      "/images/styles/solid-panel/1.webp",
-      "/images/styles/solid-panel/2.webp",
-      "/images/styles/solid-panel/3.webp"
-    ]
-  },
-  {
     slug: "waterproof",
     name: "Waterproof Shutters",
     blurb: "Moisture-resistant; perfect for kitchens & bathrooms.",
@@ -144,25 +122,69 @@ export const shutterStyles: StyleItem[] = [
 /* ------------------- BLINDS ------------------- */
 export const blindTypes: StyleItem[] = [
   {
-    slug: "roller-day-and-night",
-    name: "Roller Day & Night (Zebra)",
-    blurb: "Dual sheer/opaque bands tune privacy and light.",
+    slug: "venetian",
+    name: "Venetian Blinds",
+    blurb: "Precise light control with warm wood or sleek aluminium.",
     description:
-      "Zebra blinds use alternating sheer and opaque bands to fine-tune privacy and daylight.",
+      "Venetian blinds provide precise tilt control with real wood warmth or aluminium practicality.",
     benefits: [
-      "Dual sheer/opaque bands tune privacy and light.",
-      "View out by day, near-blackout alignment by night.",
-      "Slim cassette with colour-matched bottom bar.",
-      "Chain or motorised control (smart-home ready).",
-      "Excellent glare control for screens.",
-      "Large fabric library: textures, plains, prints.",
-      "Low maintenance; easy dust/wipe clean.",
-      "Minimal, modern look for open-plan spaces."
+      "Precise tilt for light and privacy control.",
+      "Real wood warmth or sleek aluminium practicality.",
+      "Multiple slat widths for classic or bold looks.",
+      "Aluminium excels in kitchens and bathrooms.",
+      "Privacy without fully darkening the room.",
+      "Colour-matched tapes/cords for a tailored feel.",
+      "Durable, easy-clean slats and hardware.",
+      "Smart, versatile choice for almost any room."
     ],
-    cover: "/images/styles/roller-day-and-night/cover.webp",
+    cover: "/images/styles/venetian/cover.webp",
     gallery: [
-      "/images/styles/roller-day-and-night/1.webp",
-      "/images/styles/roller-day-and-night/2.webp"
+      "/images/styles/venetian/1.webp",
+      "/images/styles/venetian/2.webp"
+    ]
+  },
+  {
+    slug: "vertical",
+    name: "Vertical Blinds",
+    blurb: "Wide-panel control ideal for large windows and doors.",
+    description:
+      "Vertical blinds offer clean lines and smooth side-stack operation for patio doors and wide glazing.",
+    benefits: [
+      "Side-draw or split-draw for flexible access.",
+      "Great for patio doors and large spans.",
+      "Rotate louvres to tune glare and privacy.",
+      "Moisture-tolerant fabrics available.",
+      "Child-safe wand or motorised control.",
+      "Slim headrail with neat, even stack.",
+      "Extensive fabric textures and colours.",
+      "Easy to clean and maintain."
+    ],
+    cover: "/images/styles/vertical/cover.webp",
+    gallery: [
+      "/images/styles/vertical/1.webp",
+      "/images/styles/vertical/2.webp"
+    ]
+  },
+  {
+    slug: "perfect-fit",
+    name: "Perfect Fit Blinds",
+    blurb: "Frame-mounted blinds that fit neatly without drilling.",
+    description:
+      "Perfect Fit blinds clip directly into uPVC frames with no drilling, ideal for modern homes and conservatories.",
+    benefits: [
+      "No-drill installation for uPVC frames.",
+      "Ideal for tilt-and-turn windows and doors.",
+      "Fits within the frame—no hanging cords.",
+      "Available as pleated, Venetian, or roller.",
+      "Neat, integrated look with minimal gaps.",
+      "Thermal and light-control fabric options.",
+      "Safe for children and pets.",
+      "Perfect for conservatories and bifold doors."
+    ],
+    cover: "/images/styles/perfect-fit/cover.webp",
+    gallery: [
+      "/images/styles/perfect-fit/1.webp",
+      "/images/styles/perfect-fit/2.webp"
     ]
   },
   {
@@ -188,25 +210,25 @@ export const blindTypes: StyleItem[] = [
     ]
   },
   {
-    slug: "venetian",
-    name: "Venetian Blinds",
-    blurb: "Precise light control with warm wood or sleek aluminium.",
+    slug: "roller-day-and-night",
+    name: "Roller Day & Night (Zebra)",
+    blurb: "Dual sheer/opaque bands tune privacy and light.",
     description:
-      "Venetian blinds provide precise tilt control with real wood warmth or aluminium practicality.",
+      "Zebra blinds use alternating sheer and opaque bands to fine-tune privacy and daylight.",
     benefits: [
-      "Precise tilt for light and privacy control.",
-      "Real wood warmth or sleek aluminium practicality.",
-      "Multiple slat widths for classic or bold looks.",
-      "Aluminium excels in kitchens and bathrooms.",
-      "Privacy without fully darkening the room.",
-      "Colour-matched tapes/cords for a tailored feel.",
-      "Durable, easy-clean slats and hardware.",
-      "Smart, versatile choice for almost any room."
+      "Dual sheer/opaque bands tune privacy and light.",
+      "View out by day, near-blackout alignment by night.",
+      "Slim cassette with colour-matched bottom bar.",
+      "Chain or motorised control (smart-home ready).",
+      "Excellent glare control for screens.",
+      "Large fabric library: textures, plains, prints.",
+      "Low maintenance; easy dust/wipe clean.",
+      "Minimal, modern look for open-plan spaces."
     ],
-    cover: "/images/styles/venetian/cover.webp",
+    cover: "/images/styles/roller-day-and-night/cover.webp",
     gallery: [
-      "/images/styles/venetian/1.webp",
-      "/images/styles/venetian/2.webp"
+      "/images/styles/roller-day-and-night/1.webp",
+      "/images/styles/roller-day-and-night/2.webp"
     ]
   }
 ]

@@ -74,8 +74,8 @@ export default function AboutPage() {
             </p>
             <p className="mt-4 text-gray-700 leading-relaxed">
               Today, our small, specialist team brings together joinery know-how and design sense.
-              We help you choose the right style—full-height, tier-on-tier, café-style, solid panel,
-              waterproof—plus roller Day & Night, Roman and Venetian blinds. The result is a finish
+              We help you choose the right style. Full-height, tier-on-tier, café-style,
+              waterproof shutters or venetian, Roman, vertical, roller Day & Night blinds. The result is a finish
               that looks seamless and works perfectly for years.
             </p>
           </div>
