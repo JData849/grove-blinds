@@ -27,7 +27,7 @@ export function FinalQuote({ context, phone = "+44XXXXXXXXXX" }: Props) {
 
     // POST to Netlify
     const payload = { "form-name": "quote", ...raw }
-    await fetch("/", {
+    await fetch("/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode(payload),
