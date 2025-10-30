@@ -14,9 +14,18 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://groveblinds.netlify.app"),
-  title: { default: "Grove Blinds & Shutters", template: "%s · Grove Blinds & Shutters" },
-  description: "Luxury, made-to-measure shutters and blinds across Greater Manchester and surrounding areas.",
+  title: { default: "Grove Blind & Shutter", template: "%s | Grove Blind & Shutter" },
+  description: "Family-run specialists with 25+ years’ combined experience. Free in-home design visits.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
+  themeColor: "#ffffff",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
