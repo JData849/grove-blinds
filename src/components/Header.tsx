@@ -19,9 +19,33 @@ const SOCIAL: { label: "Instagram" | "Facebook"; href: string }[] = [
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100067845190925" },
 ]
 
-function PhoneBadge({ className = "" }: { className?: string }) {
+function PhoneBadge({
+  className = "",
+  variant = "inline", // "inline" | "menu"
+}: { className?: string; variant?: "inline" | "menu" }) {
+  if (variant === "menu") {
+    return (
+      <div className={clsx("grid grid-cols-1 sm:grid-cols-2 gap-2", className)}>
+        {PHONES.map((num) => {
+          const tel = num.replace(/\s+/g, "")
+          return (
+            <a
+              key={num}
+              href={`tel:${tel}`}
+              aria-label={`Call ${num}`}
+              className="inline-flex h-11 items-center justify-center rounded-xl border border-gray-200 bg-white px-3 text-sm font-semibold text-gray-900 hover:bg-gray-50"
+            >
+              {num}
+            </a>
+          )
+        })}
+      </div>
+    )
+  }
+
+  // Desktop / inline display
   return (
-    <div className={clsx("flex flex-col sm:flex-row sm:items-center sm:gap-3 text-sm font-semibold text-gray-900", className)}>
+    <div className={clsx("flex items-center gap-3 text-sm font-semibold text-gray-900", className)}>
       {PHONES.map((num) => {
         const tel = num.replace(/\s+/g, "")
         return (
@@ -92,7 +116,7 @@ export function Header() {
           <Link href="/about" className="block rounded-xl px-3 py-2 hover:bg-gray-50">About</Link>
           <Link href="/shutters" className="block rounded-xl px-3 py-2 hover:bg-gray-50">Shutters</Link>
           <Link href="/blinds" className="block rounded-xl px-3 py-2 hover:bg-gray-50">Blinds</Link>
-          <PhoneBadge className="mt-2" />
+          <PhoneBadge variant="menu" className="mt-3" />
           <a href="#quote" className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-brand px-4 py-2 font-semibold text-gray-900 shadow-sm hover:opacity-90">
             Free Quote
           </a>
@@ -152,7 +176,7 @@ export function Footer() {
           </div>
           <PhoneBadge />
           <p className="mt-3 text-sm text-gray-500">
-            Online only — free in-home consultations across Greater Manchester and Cheshire.
+          Free in-home consultations across Greater Manchester & Surrounding Areas.
           </p>
         </div>
 
