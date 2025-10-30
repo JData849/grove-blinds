@@ -50,8 +50,6 @@ export function FinalQuote({ context, phone = "+44XXXXXXXXXX" }: Props) {
             id="quote-form"
             name="quote"
             method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="website"
             onSubmit={onSubmit}
             className="grid sm:grid-cols-2 gap-4"
           >
