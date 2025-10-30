@@ -5,8 +5,11 @@ import Image from "next/image"
 import { useMemo, useState } from "react"
 import clsx from "clsx"
 
-const PHONE_DISPLAY = "0161 555 0123"
-const PHONE_TEL = "+441615550123" // E.164
+const PHONES = [
+  { display: "01942 644007", tel: "+441942644007" },
+  { display: "01925 877007", tel: "+441925877007" },
+]
+
 const HOURS: { day: string; open: string; close: string; closed?: boolean }[] = [
   { day: "Mon–Fri", open: "09:00", close: "17:00" },
   { day: "Sat", open: "", close: "", closed: true },
@@ -21,14 +24,15 @@ const SOCIAL = [
 function PhoneBadge({ className = "" }: { className?: string }) {
   return (
     <div className={clsx("flex flex-col sm:flex-row sm:items-center sm:gap-3 text-sm font-semibold text-gray-900", className)}>
-      {PHONES.map((num) => (
-        <a key={num} href={`tel:${num.replace(/\s/g, "")}`} className="hover:underline">
-          {num}
+      {PHONES.map((p) => (
+        <a key={p.tel} href={`tel:${p.tel}`} className="hover:underline">
+          {p.display}
         </a>
       ))}
     </div>
   )
 }
+
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -86,13 +90,18 @@ export function Footer() {
     "@type": "Service",
     "name": "GROVE Blind & Shutter Co.",
     "areaServed": ["Greater Manchester", "Cheshire"],
-    "telephone": PHONES,
-    "openingHoursSpecification": HOURS.map(h => ({
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": h.closed ? [] : ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": h.open || "",
-      "closes": h.close || "",
-    })),
+    "telephone": PHONES.map(p => p.tel),
+    "openingHoursSpecification": HOURS.map(h => {
+      const base: any = {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": daysFromLabel(h.day),
+      }
+      if (!h.closed) {
+        base.opens = h.open || ""
+        base.closes = h.close || ""
+      }
+      return base
+    }),
     "serviceType": "Made-to-measure blinds and shutters with in-home consultation",
     "sameAs": SOCIAL.map(s => s.href)
   }), [])
@@ -140,9 +149,9 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-gray-900">Connect</h3>
           <ul className="mt-3 space-y-2 text-sm">
             {SOCIAL.map((s) => (
-              <li key={s.name}>
+              <li key={s.href}>
                 <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
-                  {s.name}
+                  {s.label}
                 </a>
               </li>
             ))}
