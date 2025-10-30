@@ -123,6 +123,15 @@ export default function BlindsLanding() {
 
       <CoverageSection />
       <FinalQuote />
+        {/* Hidden shadow form for Netlify build detection */}
+      <form name="quote" data-netlify="true" hidden aria-hidden="true">
+        <input name="name" />
+        <input name="postcode" />
+        <input name="phone" />
+        <input name="email" />
+        <textarea name="message" />
+        <input name="consent" />
+      </form>
       <Footer />
     </div>
   )
